@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preload" href="https://static.snyk.io/prod/static-assets/style/build/fonts/prenton-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://static.snyk.io/prod/static-assets/style/build/fonts/prenton-medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://static.snyk.io/prod/static-assets/style/build/fonts/prenton-bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious Package | Snyk</title>
+    <meta name="description" content="About the Malicious Package vulnerability">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/snyk/image/upload/v1468845142/favicon/favicon.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/snyk/image/upload/v1468845142/favicon/android-chrome.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/snyk/image/upload/v1468845142/favicon/apple-touch-icon.png" sizes="180x180">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/snyk/image/upload/v1468845142/favicon/favicon.ico">
+    <link rel="mask-icon" href="https://res.cloudinary.com/snyk/image/upload/v1468845142/favicon/safari-pinned-tab.svg">
+    <link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="Snyk Blog">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="https://res.cloudinary.com/snyk/image/upload/v1468845142/favicon/mstile.png">
+    <meta name="theme-color" content="#333152">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" property="og:image" content="https://res.cloudinary.com/snyk/image/upload/v1468845142/logo/snyk-avatar.png">
+    <meta name="twitter:site" content="@snyksec">
+    <meta name="twitter:title" property="og:title" content="Snyk - Malicious Package">
+    <meta name="twitter:description" property="og:description" content="About the Malicious Package vulnerability">
+    <link rel="stylesheet" href="https://static.snyk.io/prod/static-assets/style/build/styles/app.min.281c064413f595444ff3c794b63c09c9.md5.css">
+      <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9" type="text/javascript">
+        window.$embedded = {}
+      </script>
+    <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9">
+    function loadNav(navHtml){if(document.getElementById("nav__list__items")){document.getElementById("nav__list__items").innerHTML=navHtml}var navListAccountItems=document.getElementById("account-items").innerHTML;var accountItems=document.getElementById("nav__list__item__account");var navListItems=document.getElementById("nav-items").innerHTML;var navItems=document.getElementById("nav__list__items");accountItems.outerHTML=navListAccountItems;navItems.outerHTML=navListItems;navGreedy();document.getElementById("layout-nav").style.visibility="visible"}function getQueryParams(){var queryString=window.location.search.replace("?","");return queryString.split("&").reduce(function(params,curr){var p=curr.split("=");params[decodeURIComponent(p[0])]=decodeURIComponent(p[1]);return params},{})}function getNavHtml(){var request=new XMLHttpRequest;request.onload=function(){if(this.readyState===4){if(this.status>=200&&this.status<400){if(!document.getElementById("nav__list__items")||!document.getElementById("nav-greedy")){document.addEventListener("DOMContentLoaded",function(){loadNav(request.responseText)})}else{loadNav(request.responseText)}}else{}}};var url="/partials/nav-site-account?";var params=getQueryParams();var queryParams=[];if(window.$embedded&&window.$embedded.org){queryParams.push("org="+window.$embedded.org.name)}if(params.features){queryParams.push("features="+params.features)}if(/group\//.test(window.location.pathname)){queryParams.push("groupSection=true")}url+=queryParams.join("&");request.open("GET",url,true);request.send(null)}getNavHtml();function navGreedy(){function elementWidth(element){return parseInt(getComputedStyle(element).width)}function elementChildren(element){return Array.prototype.slice.call(element.children,0)}function toggleClass(element,cls){element.classList[element.classList.contains(cls)?"remove":"add"](cls)}var _$=document.querySelector.bind(document);var nav=_$(".nav-greedy");var btn=_$(".nav-greedy button.nav-greedy__button");var vlinks=_$(".nav-greedy .nav-greedy__list");var hlinks=_$(".nav-greedy .nav-greedy__list--hidden");var numOfItems=0;var totalSpace=0;var breakWidths=[];elementChildren(vlinks).forEach(function(child){var w=child.offsetWidth;totalSpace+=w;numOfItems+=1;breakWidths.push(totalSpace)});var availableSpace,numOfVisibleItems,requiredSpace;function check(){var logoWidth=elementWidth(_$(".site-logo"));if(_$(".nav-dropdown")){availableSpace=elementWidth(vlinks)-150}else{availableSpace=elementWidth(vlinks)-logoWidth-70}numOfVisibleItems=vlinks.children.length;requiredSpace=breakWidths[numOfVisibleItems-1];if(requiredSpace>availableSpace){hlinks.insertBefore(elementChildren(vlinks).slice(-1)[0],hlinks.firstChild);numOfVisibleItems-=1;check()}else if(availableSpace>breakWidths[numOfVisibleItems]){vlinks.appendChild(hlinks.firstChild);numOfVisibleItems+=1}btn.setAttribute("count",numOfItems-numOfVisibleItems);if(numOfVisibleItems===numOfItems){btn.classList.add("is-hidden");hlinks.classList.add("is-hidden");nav.classList.remove("nav-greedy--open");btn.classList.remove("nav-greedy__button--open")}else{btn.classList.remove("is-hidden")}if(window.matchMedia("(min-width: 40em)").matches){btn.textContent="More"}else{elementChildren(vlinks).reverse().forEach(function(child){hlinks.insertBefore(child,hlinks.firstChild)});btn.textContent="Menu"}}window.onresize=check;btn.onclick=function(){toggleClass(hlinks,"is-hidden");toggleClass(nav,"nav-greedy--open");toggleClass(btn,"nav-greedy__button--open")};check()}
+    </script>
+    <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9">
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+      analytics.load("rrZlYpGGcdrLvloIXwGTqX8ZAQNsB9A0");
+      }}();
+    </script>
+    <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9">
+      window.LUX = window.LUX || {}; LUX.samplerate = 100;
+    </script>
+    <script src="https://cdn.speedcurve.com/js/lux.js?id=80837559" async defer crossorigin="anonymous"></script>
+  </head>
+
+  <body class="section-vuln">
+
+    <div data-snyk-main class="l-main ">
+
+
+
+      <header id="header" class="site-header site-header--sticky ">
+        <div id="layout-nav" class="layout-nav" style="visibility:hidden">
+        <noscript><div class="layout-nav"></noscript>
+        
+          <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9">
+        setTimeout(function () {
+          document.getElementById('layout-nav').style.visibility = 'visible';
+        },2000);
+        </script>
+        
+          <nav id="nav-greedy" class="nav nav--header nav-greedy" aria-label="Global">
+        
+            <a href="/" class="site-logo" id="site-logo">
+              <span class="site-logo__symbol">Snyk</span>
+            </a>
+            <ul class="nav__list nav-greedy__list" id="nav-greedy__list">
+              <li class="nav__list__item nav__list__item--test">
+                <a href="/test" class="nav__list__item__link nav__list__org__item__link" >Test</a>
+              </li>
+              <li class="nav__list__item nav__list__item--vuln ">
+                <a href="/vuln/" class="nav__list__item__link" >Vulnerability DB</a>
+              </li>
+              <li class="nav__list__item nav__list__item--docs">
+                <a href="/docs/" class="nav__list__item__link">Docs</a>
+              </li>
+              <span id="nav__list__item__account">
+                <li class="nav__list__item nav__list__item--account">
+                  <a href="/account/" class="nav__list__item__link">Account</a>
+                </li>
+              </span>
+        
+            </ul>
+        
+            <button class="nav-greedy__button button--as-text" type="button" id="nav-greedy__button">Menu</button>
+        
+            <ul class='nav-greedy__list--hidden is-hidden'></ul>
+        
+          </nav>
+        
+        <noscript></div></noscript>
+        
+        </div>
+        
+        <nav class="nav nav--header nav--secondary" aria-label="Global" style="display: none">
+        
+          <div class="layout-nav">
+            <ul class="nav__list">
+              <span id="nav__list__items">
+                  <li class="nav__list__item nav__list__item--dashboard">
+                    <a href="/org/" class="nav__list__item__link">Dashboard</a>
+                  </li>
+                  <li class="nav__list__item nav__list__item--reports">
+                    <a href="/org//reports" class="nav__list__item__link">Reports</a>
+                  </li>
+                  <li class="nav__list__item nav__list__item--projects">
+                    <a href="/projects" class="nav__list__item__link">Projects</a>
+                  </li>
+                  <li class="nav__list__item nav__list__item--integrations">
+                    <a href="/org//integrations" class="nav__list__item__link">Integrations</a>
+                  </li>
+                  <li class="nav__list__item nav__list__item--organisation">
+                    <a href="/org//manage" class="nav__list__item__link">Settings</a>
+                  </li>
+              </span>
+            </ul>
+          </div>
+        
+        </nav>
+      </header>
+
+    <main class="backdrop-neutral">
+
+
+        <div id="messaging-alerts">
+        </div>
+
+      <div class="header header--strip header--severity-high">
+  <div class="l-constrain">
+    <nav class="breadcrumbs">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__list-item">
+          <a class="breadcrumbs__list-item__link" href="/vuln/">Vulnerability DB</a>
+        </li>
+        <li class="breadcrumbs__list-item">
+            <a class="breadcrumbs__list-item__link" href="/vuln/?type=npm" ><svg width="16" height="16" viewBox="0 0 24 24" role="img">
+      <path d="M2,2 L22,2 L22,22 L2,22 L2,2 Z M13,19 L13,10 L16,10 L16,19 L19,19 L19,6 L6,6 L6,19 L13,19 Z"/>
+    </svg>npm</a>
+        </li>
+      </ol><!-- .breadcrumbs__list -->
+    </nav><!-- .breadcrumbs -->
+  </div>
+
+<div class="l-cols l-cols--2 l-cols--sidebar">
+  <div class="l-col">
+
+        <h1 class="header__title">
+            <svg width="32" height="32" viewBox="0 0 24 24" role="img">
+  <path d="M12,1 L3,5 L3,11 C3,16.55 6.84,21.74 12,23 C17.16,21.74 21,16.55 21,11 L21,5 L12,1 Z M12,11.99 L19,11.99 C18.47,16.11 15.72,19.78 12,20.93 L12,12 L5,12 L5,6.3 L12,3.19 L12,11.99 Z"/>
+</svg>
+          <span class="header__title__text" >Malicious Package</span>
+        </h1>
+        <p class="header__lede">Affecting
+          <strong >
+          <a class="breadcrumbs__list-item__link" href="/vuln/npm:http-fetch-cookies">http-fetch-cookies</a></strong> package, <strong >ALL</strong> versions</p>
+  </div>
+  <div class="l-col">
+        <div class="l-pull-right">
+          <div class="label label--high">
+            <span class="label__text" >high severity</span>
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+
+<div class="l-cols l-cols--2 l-cols--sidebar">
+  <div class="l-col">
+<div class="prose">
+  
+  
+  <div class="card card--markdown">
+
+
+  <div class="card__content">
+<h2 id="overview">Overview</h2>
+<p><code>http-fetch-cookies</code> contains a malicious backdoor.</p>
+<p>The backdoor works by parsing the user-supplied HTTP <code>request.headers</code>, looking for specifically formatted data that provides three different commands to the backdoor:</p>
+<ul>
+<li>resetting the code buffer.</li>
+<li>executing code located in the buffer by calling <code>vm.runInThisContext</code>, providing <code>module.exports</code>, <code>required</code>, <code>req</code>, <code>res</code>, and <code>next</code> as arguments.</li>
+<li>loading remote code in to memory for execution.</li>
+</ul>
+<p>These control codes allowed for an attacker to input arbitrary code into a running server and execute it.</p>
+<p>The list of packages and their scripts are:</p>
+<pre><code>express-cookies
+getcookies
+http-fetch-cookies
+</code></pre><h2 id="remediation">Remediation</h2>
+<p>Avoid usage of this package altogether.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://blog.npmjs.org/post/173526807575/reported-malicious-module-getcookies">NPM Blog</a></li>
+<li><a href="https://news.ycombinator.com/item?id=16975025">Hacker News</a></li>
+</ul>
+
+
+  </div>
+
+</div>
+
+</div>
+  </div>
+  <div class="l-col">
+
+<div class="card card--cta">
+
+  <div class="card__heading">
+    <div
+      class="heading heading--prose">  <h1
+        class="heading__title" >
+        Do your applications use this vulnerable package?
+      </h1></div>
+  </div>
+
+  <div class="card__content">
+<form id="" action="/signup" method="get"   >
+  
+  <input type="hidden" name="_csrf" value="" />
+  
+              <button
+              
+              type="submit"
+              
+              
+              class="btn   "
+              
+               data-snyk-track-on-click="Sign up - vuln sidebar"
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              >
+              Test your applications
+              </button>
+</form>
+
+  </div>
+
+</div>
+
+<div class="card card--sidebar">
+
+
+  <div class="card__content">
+
+<dl>
+
+<dt>Credit</dt>
+<dd >
+        Unknown
+
+</dd>
+
+
+<dt>CWE</dt>
+<dd >
+        <a
+href="https://cwe.mitre.org/data/definitions/506.html"
+class="link--external" 
+
+
+
+
+
+>
+  CWE-506
+</a>
+
+
+</dd>
+
+<dt>Snyk ID</dt>
+<dd >
+        npm:http-fetch-cookies:20180502
+
+</dd>
+
+<dt>Disclosed</dt>
+<dd >
+        02 May, 2018
+
+</dd>
+
+<dt>Published</dt>
+<dd >
+        03 May, 2018
+
+</dd>
+
+
+</dl>
+
+      <ul class="social ">
+        <li class="social__item">
+          <a href="https://twitter.com/intent/tweet/?text=Snyk%20%7C%20Vulnerability%20%7C%20http-fetch-cookies:%20Malicious Package&amp;url=https://snyk.io/vuln/npm:http-fetch-cookies:20180502?utm_source=vuln" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" role="img">
+        <path d="M22.2133325,5.66095442 C21.4910743,6.00532309 20.7148927,6.23806721 19.9002251,6.34274417 C20.7317662,5.80685372 21.370303,4.95832191 21.6710106,3.94729379 C20.8928903,4.44342861 20.0309769,4.80377672 19.1136322,4.99800035 C18.3789522,4.15649332 17.3322918,3.63063827 16.173979,3.63063827 C13.9497627,3.63063827 12.1465227,5.56924629 12.1465227,7.96037373 C12.1465227,8.2997247 12.1822083,8.6301982 12.2508512,8.9470853 C8.9037206,8.76652527 5.93620813,7.04275204 3.9498725,4.42320341 C3.60321156,5.06269009 3.40460672,5.80646774 3.40460672,6.59995924 C3.40460672,8.10210448 4.11566375,9.42739507 5.19628662,10.2038264 C4.53606554,10.1813625 3.91512025,9.98659853 3.37208033,9.66230066 C3.37179312,9.68036439 3.37179312,9.6985053 3.37179312,9.71672342 C3.37179312,11.8145855 4.76001655,13.5646052 6.6023888,13.9623159 C6.26441591,14.0612804 5.90863609,14.1141592 5.54129612,14.1141592 C5.28180302,14.1141592 5.02949015,14.0870637 4.78363947,14.0365007 C5.29609166,15.7567229 6.7834021,17.0085235 8.54571491,17.043493 C7.16740018,18.2047434 5.43086436,18.8969545 3.54404656,18.8969545 C3.21899807,18.8969545 2.89840132,18.8764977 2.58333333,18.8365105 C4.36560715,20.0649981 6.48255095,20.7817573 8.75688514,20.7817573 C16.1645729,20.7817573 20.2153649,14.1840983 20.2153649,8.4624526 C20.2153649,8.27471339 20.2114876,8.08797772 20.203733,7.90232279 C20.9905413,7.29186159 21.6733801,6.52924825 22.2133325,5.66095442"/>
+      </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="https://facebook.com/sharer/sharer.php?u=https://snyk.io/vuln/npm:http-fetch-cookies:20180502?utm_source=vuln" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" role="img">
+        <path d="M20.7182675,2.2 L3.28173284,2.2 C2.68417275,2.2 2.2,2.68417275 2.2,3.28173284 L2.2,20.7182675 C2.2,21.3156808 2.68417275,21.8000004 3.28173284,21.8000004 L12.6689414,21.8000004 L12.6689414,14.2098783 L10.1147154,14.2098783 L10.1147154,11.25182 L12.6689414,11.25182 L12.6689414,9.07036215 C12.6689414,6.5387548 14.2151658,5.16026143 16.4735126,5.16026143 C17.5552455,5.16026143 18.4850363,5.24082226 18.7559469,5.27680658 L18.7559469,7.92246221 L17.1896741,7.92319659 C15.9614336,7.92319659 15.7236434,8.50680357 15.7236434,9.36323049 L15.7236434,11.25182 L18.6528408,11.25182 L18.2714069,14.2098783 L15.7236434,14.2098783 L15.7236434,21.8000004 L20.7182675,21.8000004 C21.3156808,21.8000004 21.8000004,21.3156808 21.8000004,20.7182675 L21.8000004,3.28173284 C21.8000004,2.68417275 21.3156808,2.2 20.7182675,2.2"/>
+      </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://snyk.io/vuln/npm:http-fetch-cookies:20180502?utm_source=vuln&amp;title=Snyk%20%7C%20Vulnerability%20%7C%20http-fetch-cookies:%20Malicious Package&amp;source=https://snyk.io" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" role="img">
+        <path d="M6.70542273,7.97387327 C5.75261848,7.97387327 4.98426381,7.19879001 4.98426381,6.24320791 C4.98426381,5.28818463 5.75261848,4.51310137 6.70542273,4.51310137 C7.65433798,4.51310137 8.42435937,5.28818463 8.42435937,6.24320791 C8.42435937,7.19879001 7.65433798,7.97387327 6.70542273,7.97387327 L6.70542273,7.97387327 Z M20.5205145,2 L3.47504097,2 C2.66112948,2 2,2.64555556 2,3.44222222 L2,20.5566667 C2,21.3533333 2.66112948,22 3.47504097,22 L20.5205145,22 C21.3360927,22 22,21.3533333 22,20.5566667 L22,3.44222222 C22,2.64555556 21.3360927,2 20.5205145,2 L20.5205145,2 Z M19.2996615,18.8859503 L16.333468,18.8859503 L16.333468,14.2170097 C16.333468,13.1038403 16.3145785,11.6715848 14.792314,11.6715848 C13.2483823,11.6715848 13.0128202,12.8847829 13.0128202,14.1376572 L13.0128202,18.8859503 L10.0499601,18.8859503 L10.0499601,9.28542367 L12.8933724,9.28542367 L12.8933724,10.5980917 L12.9344846,10.5980917 C13.3300512,9.84312597 14.2978559,9.04736638 15.7406737,9.04736638 C18.744646,9.04736638 19.2996615,11.0350889 19.2996615,13.6207488 L19.2996615,18.8859503 L19.2996615,18.8859503 Z M5.19999981,9.30000019 L8.19999981,9.30000019 L8.19999981,18.9000006 L5.19999981,18.9000006 L5.19999981,9.30000019 Z"/>
+      </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="https://plus.google.com/share?url=https://snyk.io/vuln/npm:http-fetch-cookies:20180502?utm_source=vuln" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" role="img">
+        <path d="M8.515575,10.985105 L8.51484,10.985105 L15.140865,10.985105 C15.199665,11.333495 15.251115,11.683355 15.251115,12.141995 C15.251115,16.13231 12.565425,18.965 8.515575,18.965 C4.63698,18.965 1.5,15.84272 1.5,11.9825 C1.5,8.12228 4.63698,5 8.51631,5 C10.41114,5 11.99433,5.68796 13.215165,6.82574 L11.311515,8.650745 C10.7904,8.15315 9.878265,7.5725 8.51484,7.5725 C6.12021,7.5725 4.16511,9.54965 4.16511,11.9825 C4.16511,14.41535 6.11874,16.3925 8.51484,16.3925 C11.29167,16.3925 12.333165,14.40653 12.494865,13.379 L8.515575,13.379 L8.515575,10.985105 Z M22.5,10.98584 L22.5,12.9821 L20.495655,12.9821 L20.495655,14.976155 L18.490575,14.976155 L18.490575,12.9821 L16.48623,12.9821 L16.48623,10.98584 L18.490575,10.98584 L18.490575,8.99105 L20.495655,8.99105 L20.495655,10.98584 L22.5,10.98584 Z"/>
+      </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="mailto:?subject=Snyk&amp;body=Snyk%20%7C%20Vulnerability%20%7C%20http-fetch-cookies:%20Malicious Package%20https://snyk.io/vuln/npm:http-fetch-cookies:20180502?utm_source=vuln" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" role="img">
+        <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 Z"/>
+      </svg>
+          </a>
+        </li>
+      </ul>
+
+
+  </div>
+
+</div>
+
+  </div>
+</div>
+
+
+    </main>
+
+    
+    </main>
+    
+    
+    <footer id="footer" class="site-footer">
+    
+      <div class="nav nav--footer l-constrain">
+    
+      <div id="signup" class="site-cta nav__group nav__group--large">
+        <h2 class="nav__list__item__heading">Get free account</h2>
+        <form class="site-cta__form" method="get" action="/signup">
+          <button class="btn" type="submit">Sign up</button>
+        </form>
+      </div>
+    
+      <nav class="nav__group">
+        <h2 class="nav__list__item__heading">Product</h2>
+        <ul class="nav__list">
+          <li class="nav__list__item">
+            <a href="/partners" class="nav__list__item__link">Partners</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/features" class="nav__list__item__link">Features</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/plans" class="nav__list__item__link">Pricing</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/test#github-repo" class="nav__list__item__link">Test with GitHub</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/test#local-project" class="nav__list__item__link">Test with CLI</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="https://snyk.statuspage.io/" class="nav__list__item__link">API status</a>
+          </li>
+        </ul>
+      </nav>
+    
+      <nav class="nav__group">
+        <h2 class="nav__list__item__heading">Resources</h2>
+        <ul class="nav__list">
+          <li class="nav__list__item">
+            <a href="/vuln/" class="nav__list__item__link">Vulnerability DB</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/blog/" class="nav__list__item__link">Blog</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/docs" class="nav__list__item__link">Documentation</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="https://support.snyk.io/" class="nav__list__item__link">FAQs</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="mailto:support@snyk.io" class="nav__list__item__link">Support</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="https://docs.google.com/a/snyk.io/forms/d/e/1FAIpQLSemwgWZ0JgK1ZULKhy9DZCQ5KulbLEldvmokAuRtt-_nrqNlA/viewform" class="nav__list__item__link">Report a new vuln</a>
+          </li>
+        </ul>
+      </nav>
+    
+      <nav class="nav__group ">
+        <h2 class="nav__list__item__heading">Company</h2>
+        <ul class="nav__list">
+          <li class="nav__list__item">
+            <a href="/about" class="nav__list__item__link">About</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/jobs" class="nav__list__item__link">Jobs</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="mailto:contact@snyk.io" class="nav__list__item__link">Contact</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/policies" class="nav__list__item__link">Policies</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="https://github.com/snyk/press-kit" class="nav__list__item__link">Press kit</a>
+          </li>
+          <li class="nav__list__item">
+            <a href="/events" class="nav__list__item__link">Events</a>
+          </li>
+        </ul>
+      </nav>
+    
+      <nav class="nav__group nav__group--large">
+        <h2 class="nav__list__item__heading">Find us online</h2>
+        <h3 class="nav__list__item__label">Stay up to date</h3>
+        <ul class="list-social list-social--l u--push-bottom-m">
+          <li class="list-social__item">
+            <a href="https://twitter.com/snyksec" class="list-social__link--twitter">
+              <span class="list-social__item__text">Twitter</span>
+            </a>
+          </li>
+          <li class="list-social__item">
+              <a href="https://www.youtube.com/channel/UCh4dJzctb0NhSibjU-e2P6w" class="list-social__link--youtube">
+                <span class="list-social__item__text">Youtube</span>
+              </a>
+          </li>
+          <li class="list-social__item">
+            <a href="https://www.facebook.com/snyksec" class="list-social__link--facebook">
+              <span class="list-social__item__text">Facebook</span>
+            </a>
+          </li>
+          <li class="list-social__item">
+            <a href="https://www.linkedin.com/company/snyk" class="list-social__link--linkedin">
+              <span class="list-social__item__text">LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+    
+        <h3 class="nav__list__item__label">Track our development</h3>
+        <ul class="list-social list-social--l">
+          <li class="list-social__item">
+            <a href="https://github.com/Snyk/" class="list-social__link--github">
+              <span class="list-social__item__text">Github</span>
+            </a>
+          </li>
+          <li class="list-social__item">
+            <a href="https://www.npmjs.com/snyk" class="list-social__link--npm">
+              <span class="list-social__item__text">npmjs.com</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    
+    
+    </div>
+    
+    
+      <div class="l-container">
+        <small class="subhead">© 2018 Snyk Ltd.</small>
+      </div>
+    
+    </footer>
+    
+    <div class="fullpage-spinner">
+      <div class="fullpage-spinner__spinner">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9">
+      // Adds class of js to the html tag if JS is enabled
+      document.getElementsByTagName('html')[0].className += 'js';
+    </script>
+    <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9" src="https://static.snyk.io/prod/static-assets/js/build/raven.min.6847d6ad5c11df49d7d3dbea6a1ac816.md5.js"></script>
+    <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9">if (window.Raven){
+        Raven.config('https://db2c7b7ca7654a14b47912ee3ef4a2c5@sentry.io/262607').install();
+    
+    }</script>
+      <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9" async src="https://static.snyk.io/prod/static-assets/js/build/app.min.1e813a96f077367a5d70d71fb1e2fa02.md5.js"></script>
+
+
+    <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9" type="text/javascript">
+    
+    function getOrgLink(orgName) {
+      var org = orgName || window.$embedded.org.name || $('#nav-dropdown__select').attr('data-selected-org');
+      return org ? '/org/' + org : '';
+    }
+    
+    function submitActionMsg(confirmMsg, route, params) {
+      if (window.confirm(confirmMsg)) {
+        submitAction(route, params);
+      }
+    }
+    
+    function submitAction(route, params) {
+      var form = document.createElement('form');
+      form.setAttribute('method', 'POST');
+      form.setAttribute('action', route);
+      for (var key in params) {
+        if (params.hasOwnProperty(key)) {
+          var inputField = document.createElement('input');
+          inputField.setAttribute('type', 'hidden');
+          inputField.setAttribute('name', key);
+          inputField.setAttribute('value', params[key]);
+          form.appendChild(inputField);
+        }
+      }
+      var csrfField = document.createElement('input');
+      csrfField.setAttribute('type', 'hidden');
+      csrfField.setAttribute('name', '_csrf');
+      csrfField.setAttribute('value', '');
+      form.appendChild(csrfField);
+      document.body.appendChild(form);
+      form.submit();
+    }
+    </script>
+    
+    <script nonce="b00f433a-88ca-48a6-b419-2c27c61ad5e9" type="text/javascript">
+    
+    function getRedirectQueryString(redirectUrl) {
+      return redirectUrl ? '?redirectUrl=' + encodeURIComponent(redirectUrl) : '';
+    }
+    
+    function activateProject(publicId, redirectUrl, orgName) {
+      submitAction(getOrgLink(orgName) + '/project/' + publicId + '/start' +
+              getRedirectQueryString(redirectUrl));
+    }
+    
+    function confirmDeleteProject() {
+      var msg = 'The project and all historical snapshots associated with the ' +
+        'project will be deleted from Snyk. ' +
+        'Once this project has been deleted it can not be recovered.';
+      return confirm(msg);
+    }
+    
+    </script>
+
+
+
+      <div data-snyk-segment-key="rrZlYpGGcdrLvloIXwGTqX8ZAQNsB9A0"></div>
+    
+    <div data-snyk-track="Viewing a vuln page"></div>
+
+
+  </div><!-- #slideout-content -->
+
+  </body>
+
+</html>
