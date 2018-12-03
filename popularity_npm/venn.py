@@ -348,7 +348,7 @@ def venn5(labels, names=['A', 'B', 'C', 'D', 'E'], **options):
     #draw_text(fig, ax, 0.97, 0.74, names[2], 'black', fontsize=fontsize)
     #draw_text(fig, ax, 0.88, 0.05, names[3], 'black', fontsize=fontsize)
     #draw_text(fig, ax, 0.12, 0.05, names[4], 'black', fontsize=fontsize)
-    leg = ax.legend(names, loc='upper left', fontsize=13, bbox_to_anchor=(-0.2, 1.01), fancybox=True, shadow=True)
+    leg = ax.legend(names, loc='upper left', fontsize=19, bbox_to_anchor=(-0.5, 1.01), fancybox=True, shadow=True)
     leg.get_frame().set_alpha(1)
     
     return fig, ax
