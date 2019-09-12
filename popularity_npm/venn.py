@@ -22,11 +22,17 @@ default_colors = [
 
 def draw_ellipse(fig, ax, x, y, w, h, a, fillcolor):
     e = patches.Ellipse(
+        linewidth = 1,
+        linestyle = '-',
         xy=(x, y),
         width=w,
         height=h,
         angle=a,
-        color=fillcolor)
+        facecolor = 'none',
+        edgecolor = 'black',
+        #color=fillcolor
+    )
+    
     ax.add_patch(e)
 
 def draw_triangle(fig, ax, x1, y1, x2, y2, x3, y3, fillcolor):
@@ -305,11 +311,17 @@ def venn5(labels, names=['A', 'B', 'C', 'D', 'E'], **options):
     ax.set_xlim(left=0.0, right=1.0)
     
     # body   
-    draw_ellipse(fig, ax, 0.428, 0.449, 0.87, 0.50, 155.0, colors[0])
-    draw_ellipse(fig, ax, 0.469, 0.543, 0.87, 0.50, 82.0, colors[1])
-    draw_ellipse(fig, ax, 0.558, 0.523, 0.87, 0.50, 10.0, colors[2])
-    draw_ellipse(fig, ax, 0.578, 0.432, 0.87, 0.50, 118.0, colors[3])
-    draw_ellipse(fig, ax, 0.489, 0.383, 0.87, 0.50, 46.0, colors[4])
+    draw_ellipse(fig, ax, 0.428, 0.449, 0.87, 0.50, 155.0, 'white')
+    draw_ellipse(fig, ax, 0.469, 0.543, 0.87, 0.50, 82.0, 'white')
+    draw_ellipse(fig, ax, 0.558, 0.523, 0.87, 0.50, 10.0, 'white')
+    draw_ellipse(fig, ax, 0.578, 0.432, 0.87, 0.50, 118.0, 'white')
+    draw_ellipse(fig, ax, 0.489, 0.383, 0.87, 0.50, 46.0, 'white')
+    
+    # draw_ellipse(fig, ax, 0.428, 0.449, 0.87, 0.50, 155.0, colors[0])
+    # draw_ellipse(fig, ax, 0.469, 0.543, 0.87, 0.50, 82.0, colors[1])
+    # draw_ellipse(fig, ax, 0.558, 0.523, 0.87, 0.50, 10.0, colors[2])
+    # draw_ellipse(fig, ax, 0.578, 0.432, 0.87, 0.50, 118.0, colors[3])
+    # draw_ellipse(fig, ax, 0.489, 0.383, 0.87, 0.50, 46.0, colors[4])
     draw_text(fig, ax, 0.27, 0.11, labels.get('00001', ''), fontsize=fontsize)
     draw_text(fig, ax, 0.72, 0.11, labels.get('00010', ''), fontsize=fontsize)
     draw_text(fig, ax, 0.55, 0.13, labels.get('00011', ''), fontsize=fontsize)
